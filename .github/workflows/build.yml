@@ -51,7 +51,7 @@ jobs:
         working-directory: src/android/app
         env:
           UNPACKED: 1
-      - run: src/android/app/artifacts/*.aab
+      - run: rm src/android/app/artifacts/*.aab
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
