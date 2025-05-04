@@ -18,7 +18,6 @@ GLuint LoadShader(std::string_view source, GLenum type) {
     if (GLES) {
         preamble = R"(#version 310 es
 #extension GL_OES_shader_io_blocks : require
-#extension GL_OES_fma : require
 
 #if defined(GL_ANDROID_extension_pack_es31a)
 #extension GL_ANDROID_extension_pack_es31a : enable

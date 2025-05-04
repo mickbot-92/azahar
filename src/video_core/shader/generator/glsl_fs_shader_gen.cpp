@@ -364,7 +364,7 @@ void FragmentModule::AppendColorCombiner(Pica::TexturingRegs::TevStageConfig::Op
         case Operation::Subtract:
             return "color_results_1 - color_results_2";
         case Operation::MultiplyThenAdd:
-            return "fma(color_results_1, color_results_2, color_results_3)";
+            return "color_results_1 * color_results_2 + color_results_3";
         case Operation::AddThenMultiply:
             return "min(color_results_1 + color_results_2, vec3(1.0)) * color_results_3";
         case Operation::Dot3_RGB:
@@ -395,7 +395,7 @@ void FragmentModule::AppendAlphaCombiner(Pica::TexturingRegs::TevStageConfig::Op
         case Operation::Subtract:
             return "alpha_results_1 - alpha_results_2";
         case Operation::MultiplyThenAdd:
-            return "fma(alpha_results_1, alpha_results_2, alpha_results_3)";
+            return "alpha_results_1 * alpha_results_2 + alpha_results_3";
         case Operation::AddThenMultiply:
             return "min(alpha_results_1 + alpha_results_2, 1.0) * alpha_results_3";
         default:
