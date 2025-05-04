@@ -16,7 +16,7 @@ namespace OpenGL {
 GLuint LoadShader(std::string_view source, GLenum type) {
     std::string preamble;
     if (GLES) {
-        preamble = R"(#version 320 es
+        preamble = R"(#version 310 es
 
 #if defined(GL_ANDROID_extension_pack_es31a)
 #extension GL_ANDROID_extension_pack_es31a : enable
